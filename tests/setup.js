@@ -11,11 +11,14 @@ import MockAdapter from "axios-mock-adapter"
 import axios from "axios"
 import waitForExpect from "wait-for-expect"
 import chaiEnzyme from 'chai-enzyme'
+import chaiAsPromised from "chai-as-promised"
 
 Enzyme.configure({ adapter: new Adapter() })
 
 chai.use(sinonChai)
 chai.use(chaiEnzyme())
+chai.use(chaiAsPromised)
+
 
 waitForExpect.defaults.timeout = 10
 waitForExpect.defaults.interval = 5
